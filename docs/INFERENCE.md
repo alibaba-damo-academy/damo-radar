@@ -43,7 +43,7 @@ The results will be saved as `RADAR_infer_results_demo.csv`, which contains the 
 
 ### (1) Prepare Data
 
-- Download the MERLIN dataset from the [Stanford AIMI Shared Datasets](https://huggingface.co/datasets/stanfordaimi/merlin).
+- Download the MERLIN dataset from the [Stanford AIMI Shared Datasets](https://stanfordaimi.azurewebsites.net/datasets/60b9c7ff-877b-48ce-96c3-0194c8205c40).
 - Modify `--img_dir` to the MERLIN data path on your local device in `inference_merlin_testset.py`.
 - We provide all MERLIN reports in JSON format (`merlin_report.json`), which includes the test split information.
 - The labels have also been converted to JSON format for convenience (`merlin_labels.json`).

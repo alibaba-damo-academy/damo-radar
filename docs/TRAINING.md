@@ -47,6 +47,12 @@ All files are available on HuggingFace.
 ---
 
 ## 2. Training
+For quick start:
+
+```bash
+cd RADAR_train
+python train.py
+```
 
 For multi-GPU training:
 
@@ -71,7 +77,7 @@ Set `radar_ft` to `True` in `radar_config.yaml` to enable fine-tuning from the p
 ## 3. Inference
 
 - We use the official prompts released by MERLIN during inference.
-- Before running inference, ensure that the [original MERLIN data](https://huggingface.co/datasets/stanfordaimi/merlin) has been downloaded, and update the data path:
+- Before running inference, ensure that the [original MERLIN data](https://stanfordaimi.azurewebsites.net/datasets/60b9c7ff-877b-48ce-96c3-0194c8205c40) has been downloaded, and update the data path:
 
 ```python
 Modify the img_dir in infer_merlin_anatomy.py and infer_merlin_whole.py
