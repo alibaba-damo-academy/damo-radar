@@ -1,5 +1,3 @@
-(d)
-
 # RADAR: An Expert-Level Generalist AI for Abdominal CT Diagnosis
 
 Artificial intelligence (AI) in radiology aspires to deliver expert-level diagnosis across diverse clinical tasks, yet existing supervised strategies remain limited in scope. We developed **RADAR**, a generalist vision–language model trained on more than **400,000** contrast-enhanced abdominal CT examinations and **15 million** anatomy-wise image–text pairs, learning directly from clinical reports without manual annotation. Across extensive internal and external evaluations spanning multiple centers and varied scenarios, RADAR achieved high diagnostic performance and robust generalization for **18 anatomical structures** and **146 imaging findings**. In a reader study, AI assistance increased the diagnostic sensitivity of 26 radiologists by approximately 10%, underscoring its clinical utility. In summary, RADAR offers a scalable, versatile, and interpretable solution, demonstrating that generalist AI can match human experts in both routine and complex radiology tasks.
@@ -35,7 +33,7 @@ For detailed instructions, please refer to the following guides:
 
 | Guide                         | Description                                                                                                                               |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| [Inference](docs/INFERENCE.md) | 1. An inference demo with radar pre-trained checkpoint on RAD-CT, and 2. Inference and evaluate radar'performence on the MERLIN test set. |
+| [Inference](docs/INFERENCE.md) | 1. An inference demo with radar pre-trained checkpoint on RAD-CT, and 2. Inference and evaluate radar' performence on the MERLIN test set. |
 | [Training](docs/TRAINING.md)   | Train, inference, and evaluate RADAR/RADAR+ from scratch or fine-tuning on MERLIN data.                                                   |
 
 ---
