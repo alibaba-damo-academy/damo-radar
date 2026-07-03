@@ -1,6 +1,6 @@
 __pycache__
 *.pth
-*.nii.gz
+# *.nii.gz
 # *.csv
 # *.json
 *.bin
