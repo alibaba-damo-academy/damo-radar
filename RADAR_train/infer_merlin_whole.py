@@ -359,10 +359,9 @@ class DataFolder(Dataset):
     def __init__(self):
         super().__init__()
         
-        img_dir = '/download/merlinabdominalctdataset/merlin_data'
+        img_dir = '/mnt/nas/xiuxia/data/VLP/Merlin/download/merlinabdominalctdataset/merlin_data'
         if not os.path.exists(img_dir):
-            print('Please modify the img_dir to your own path.')
-            assert False
+            assert False, 'Please modify the img_dir to your own path.'
         
         merlin_info = json.load(open('../merlin_report.json'))
         patient_list = []
@@ -586,15 +585,14 @@ def evaluate():
     model_cls = registry.get_model_class(model_config.arch)
     model = model_cls.from_config(model_config)
     
-    epoch = 12
     Cur_Time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     if dist.is_initialized():
-        print(f'Cur_Time: {Cur_Time}, Rank: {dist.get_rank()}, Epoch: {epoch}')
+        print(f'Cur_Time: {Cur_Time}, Rank: {dist.get_rank()}')
     else:
-        print(f'Cur_Time: {Cur_Time}, Epoch: {epoch}')
+        print(f'Cur_Time: {Cur_Time}')
     
     ckp_dir = './'
-    ckpt_path = os.path.join(ckp_dir, f'checkpoint_{epoch}.pth')
+    ckpt_path = os.path.join(ckp_dir, f'checkpoint_radar_plus.pth')
     print('--> ckpt_path: ', ckpt_path)
     ckpt = torch.load(
         ckpt_path, map_location='cpu'
@@ -651,7 +649,7 @@ def evaluate():
             text_feat_dict[disease] = text_feat
 
     organ_feat_dict = {}
-    save_path = os.path.join(ckp_dir, f'checkpoint_{epoch}_ZeroShotResult_whole.csv')
+    save_path = os.path.join(ckp_dir, f'checkpoint_ZeroShotResult_whole.csv')
     
     for i, (image, test_items, meta_info) in enumerate(tqdm(dataloader, desc='Infer')):
         test_items = list(text_feat_dict.keys())

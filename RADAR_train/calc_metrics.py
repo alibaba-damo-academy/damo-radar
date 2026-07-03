@@ -13,11 +13,10 @@ from sklearn.metrics import roc_auc_score
 all_labels = json.load(open('../merlin_labels.json'))
 
 dir_path = './'
-epoch = 12
 
 
 # anatomy-level
-csv_path = os.path.join(dir_path, f'checkpoint_{epoch}_ZeroShotResult_anatomy.csv')
+csv_path = os.path.join(dir_path, f'checkpoint_ZeroShotResult_anatomy.csv')
 results = pd.read_csv(csv_path)
 test_items = list(results.columns[1:])
 # print('\nanatomy level: ')
@@ -71,7 +70,7 @@ for i, test_item in enumerate(test_items):
 
 # whole-level
 # print('\nwhole level: ')
-csv_path = os.path.join(dir_path, f'checkpoint_{epoch}_ZeroShotResult_whole.csv')
+csv_path = os.path.join(dir_path, f'checkpoint_ZeroShotResult_whole.csv')
 results = pd.read_csv(csv_path)
 test_items = list(results.columns[1:])
 
