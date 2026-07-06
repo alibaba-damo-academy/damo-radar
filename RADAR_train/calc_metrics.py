@@ -6,13 +6,11 @@ import argparse
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.metrics import roc_auc_score
 
 
-all_labels = json.load(open('../merlin_labels.json'))
-
-dir_path = './'
+all_labels = json.load(open('../ckpt/merlin_labels.json'))
+dir_path = '../results'
 
 
 # anatomy-level

@@ -23,8 +23,8 @@ from dynamic_network_architectures.vision_branch import VisionBranch
 from transformers import BertTokenizer
 
 
-model_root = os.environ.get("MODEL_ROOT", "./checkpoint")
-configs_root = os.environ.get("CONFIGS_ROOT", "./configs")
+model_root = os.environ.get("MODEL_ROOT", "../ckpt")
+configs_root = os.environ.get("CONFIGS_ROOT", "../ckpt")
 
 def masks_to_boxes_3d(masks):
     """Compute the bounding boxes around the provided 3D masks
@@ -129,7 +129,7 @@ class DataFolder(Dataset):
             print('Please modify the --img_dir to your own path.')
             assert False
         
-        merlin_info = json.load(open('../merlin_report.json'))
+        merlin_info = json.load(open('../ckpt/merlin_report.json'))
         patient_list = []
         for id,minfo in merlin_info.items():
             if minfo['split'] == 'test':
@@ -420,7 +420,7 @@ def evaluate(pad_func, model, img_dir, save_dir, save_tag):
     organ_status = {}
 
     # load pos/neg ensembled prompt embeddings
-    text_feat_dict = torch.load('text_feat_dict_merlin.pt')
+    text_feat_dict = torch.load('../ckpt/text_feat_dict_merlin.pt')
     organ_feat_dict = {}
     save_path = os.path.join(save_dir, f'RADAR_infer_results_{save_tag}.csv')
     os.makedirs(save_dir, exist_ok=True)
@@ -622,8 +622,8 @@ def inference(initialize_returns, img_dir, save_dir, save_tag):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--img_dir', type=str, default='/download/merlinabdominalctdataset/merlin_data', help='The path to inference image folder.')
-    parser.add_argument('--save_dir', type=str, default='./', help='The path to save folder.')
+    parser.add_argument('--img_dir', type=str, default='/mnt/nas/xiuxia/data/VLP/Merlin/download/merlinabdominalctdataset/merlin_data', help='The path to inference image folder.')
+    parser.add_argument('--save_dir', type=str, default='../results', help='The path to save folder.')
     parser.add_argument('--save_tag', type=str, default='MerlinTestset', help='Save tag.')
     
     args = parser.parse_args()

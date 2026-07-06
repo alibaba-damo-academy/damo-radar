@@ -584,7 +584,7 @@ class DataFolder(Dataset):
         if not os.path.exists(img_dir):
             assert False, 'Please modify the img_dir to your own path.'
         
-        merlin_info = json.load(open('../merlin_report.json'))
+        merlin_info = json.load(open('../ckpt/merlin_report.json'))
         patient_list = []
         for id,minfo in merlin_info.items():
             if minfo['split'] == 'test':
@@ -820,7 +820,7 @@ def evaluate():
     else:
         print(f'Cur_Time: {Cur_Time}')
     
-    ckp_dir = './'
+    ckp_dir = '../ckpt'
     ckpt_path = os.path.join(ckp_dir, f'checkpoint_radar_plus.pth')
     print('--> ckpt_path: ', ckpt_path)
     ckpt = torch.load(
@@ -885,7 +885,7 @@ def evaluate():
             
     
     organ_feat_dict = {}
-    save_path = os.path.join(ckp_dir, f'checkpoint_ZeroShotResult_anatomy.csv')
+    save_path = os.path.join('../results', f'checkpoint_ZeroShotResult_anatomy.csv')
     
     for i, (image, test_items, meta_info) in enumerate(tqdm(dataloader, desc='Infer')):
         test_items = list(text_feat_dict.keys())

@@ -4,7 +4,7 @@ model:
   load_finetuned: False
   
   # bert config
-  med_config_path:  "bert-base-uncased/config.json"
+  med_config_path: "../ckpt/bert-base-uncased/config.json"
 
   max_txt_len: 512
   queue_size: 0

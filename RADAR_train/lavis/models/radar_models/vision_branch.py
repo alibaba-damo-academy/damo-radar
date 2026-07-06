@@ -51,7 +51,7 @@ class VisionBranch(nn.Module):
         )
         
         # load pretrained nnu checkpoint
-        ckpt_path = '../checkpoint_unet.pth'
+        ckpt_path = '../ckpt/checkpoint_unet.pth'
         checkpoint = torch.load(ckpt_path, map_location=torch.device('cpu'), weights_only=False)
         network_weights = checkpoint["network_weights"]
         msg = self.UNet.load_state_dict(network_weights, strict=False)

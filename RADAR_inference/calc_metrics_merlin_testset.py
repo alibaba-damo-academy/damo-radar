@@ -6,14 +6,13 @@ import argparse
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.metrics import roc_auc_score
 
 
-all_labels = json.load(open('../merlin_labels.json'))
+all_labels = json.load(open('../ckpt/merlin_labels.json'))
 map_radar_merlin = {'主动脉_主动脉瘤': 'abdominal_aortic_aneurysm', '主动脉_粥样硬化': 'atherosclerosis', '大肠_粘膜下水肿': 'submucosal_edema', '大肠_阑尾炎': 'appendicitis', '小肠_梗阻': 'bowel_obstruction', '心脏_主动脉瓣钙化': 'aortic_valve_calcification', '心脏_心影（脏）增大': 'cardiomegaly', '肝_肝内胆管扩张': 'biliary_ductal_dilation', '肝_肝大': 'hepatomegaly', '肝_脂肪肝': 'hepatic_steatosis', '肺_胸腔积液': 'pleural_effusion', '肺_膨胀不全': 'atelectasis', '肾_低密度影': 'renal_hypodensities', '肾_囊肿': 'renal_cyst', '肾_肾积水': 'hydronephrosis', '胆囊_结石': 'gallstones', '胰腺_萎缩': 'pancreatic_atrophy', '脾_脾大': 'splenomegaly', '腰椎_骨折': 'fracture', '食管_裂孔疝': 'hiatal_hernia', '胆囊_术后胆囊缺失': 'surgically_absent_gallbladder'}
 
-csv_path = 'RADAR_infer_results_MerlinTestset.csv'
+csv_path = '../results/RADAR_infer_results_MerlinTestset.csv'
 print('--> csv_file: ', csv_path)
 results = pd.read_csv(csv_path)
 test_items = list(results.columns[1:])

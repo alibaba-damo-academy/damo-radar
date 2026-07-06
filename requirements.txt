@@ -32,3 +32,5 @@ monai
 batchgenerators
 SimpleITK
 nibabel
+matplotlib
+nltk

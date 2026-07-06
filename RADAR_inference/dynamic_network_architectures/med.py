@@ -1408,7 +1408,7 @@ class XBertEncoder(BertModel, BaseEncoder):
     
     @classmethod
     def from_config(cls, cfg, from_pretrained=False):
-        configs_root = os.environ.get("CONFIGS_ROOT", "./configs")
+        configs_root = os.environ.get("CONFIGS_ROOT", "../ckpt")
         med_config_path = os.path.join(configs_root, "bert-base-chinese/config.json")
         med_config = BertConfig.from_json_file(med_config_path)
 

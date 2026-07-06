@@ -23,7 +23,7 @@ class RadarBase(BaseModel):
         
     @classmethod
     def init_tokenizer(cls):
-        tokenizer = BertTokenizer.from_pretrained("lavis/bert-base-uncased")
+        tokenizer = BertTokenizer.from_pretrained("../ckpt/bert-base-uncased")
         return tokenizer
 
     def load_from_pretrained(self, url_or_filename):

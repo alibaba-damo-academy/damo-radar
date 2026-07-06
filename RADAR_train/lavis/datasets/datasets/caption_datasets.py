@@ -73,10 +73,10 @@ class CaptionDataset(BaseDataset, __DisplMixin):
         """
         super().__init__(vis_processor, text_processor, vis_root, ann_paths)
 
-        self.annotation = json.load(open('..//merlin_report_organ_report_v1.json'))
-        self.organ_abnormal_info = json.load(open('..//merlin_report_organ_normal_v1.json'))
+        self.annotation = json.load(open('../ckpt/merlin_report_organ_report_v1.json'))
+        self.organ_abnormal_info = json.load(open('../ckpt/merlin_report_organ_normal_v1.json'))
         
-        vis_root = 'merlin_data_train_demo/resized_images'    # just resize spacing to [1, 1, 5]
+        vis_root = '../data/merlin_data_train_demo/resized_images'    # just resize spacing to [1, 1, 5]
         self.patient_paths = [
             os.path.join(vis_root, folder)
             for folder in os.listdir(vis_root)
