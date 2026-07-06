@@ -50,18 +50,9 @@ We have provided a demo nifty, the results will be saved as `RADAR_infer_results
 
 ### (2) Run Inference
 
-Single-GPU:
-
 ```bash
 cd RADAR_inference
 python inference_merlin_testset.py
-```
-
-Multi-GPU (recommended):
-
-```bash
-cd RADAR_inference
-torchrun --nproc_per_node=8 inference_merlin_testset.py
 ```
 
 The inference results will be saved as a CSV file. (We also provided for convenience: `RADAR_infer_results_MerlinTestset.csv`)
