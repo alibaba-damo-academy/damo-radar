@@ -17,10 +17,10 @@ This document covers 1. an inference demo with RADAR pre-trained checkpoint on R
 
 ### (1) Download Required Files and Place Them to Target folder
 
-| File                  | Description                            | Destination                                                        |
-| --------------------- | -------------------------------------- | ------------------------------------------------------------------ |
-| Pretrained checkpoint | RADAR pre-trained checkpoint on RAD-CT | `radar/RADAR_inference/checkpoint/checkpoint_radar_pretrain.pth` |
-| `bert-base-chinese` | BERT tokenizer and model               | `radar/RADAR_inference/configs/bert-base-chinese/`               |
+| File                  | Description                            | Destination                                  |
+| --------------------- | -------------------------------------- | -------------------------------------------- |
+| Pretrained checkpoint | RADAR pre-trained checkpoint on RAD-CT | `ckpt/checkpoint_radar_pretrain.pth` |
+| `bert-base-chinese` | BERT tokenizer and model               | `ckpt/bert-base-chinese`             |
 
 <!-- | `RADAR_infer_results_MerlinTestset.csv`   | The inference results of RADAR on Merlin-CT-Test set | `radar/RADAR_inference/RADAR_infer_results_MerlinTestset.csv`      | -->
 
@@ -35,7 +35,7 @@ cd RADAR_inference
 python inference_demo.py
 ```
 
-The results will be saved as `RADAR_infer_results_demo.csv`, which contains the positive scores for each finding.
+We have provided a demo nifty, the results will be saved as `RADAR_infer_results_demo.csv`, which contains the positive scores for each finding.
 
 ---
 
