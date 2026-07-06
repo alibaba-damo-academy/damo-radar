@@ -135,8 +135,6 @@ python calc_metrics.py
 
 ---
 
-[← Back to README](../README.md)
-
 
 ## Others
 
@@ -151,4 +149,8 @@ For radiology report processing, we provide the following scripts:
 - `check_organ_mention.py`: identifies whether a report mentions a specific abdominal anatomical structure.
 - `report_parsing.py`: extracts anatomy-level descriptions for the anatomical structures mentioned in the report.
 - `report_parsing_normal.py`: determines whether each mentioned anatomical structure is described as **normal** or **abnormal**. This information is used to reduce false negatives during training.
+
+---
+
+[← Back to README](../README.md)
 
