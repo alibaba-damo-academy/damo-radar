@@ -420,7 +420,7 @@ def evaluate(pad_func, model, img_dir, save_dir, save_tag):
     organ_status = {}
 
     # load pos/neg ensembled prompt embeddings
-    text_feat_dict = torch.load('text_feat_dict.pt')
+    text_feat_dict = torch.load('text_feat_dict_merlin.pt')
     organ_feat_dict = {}
     save_path = os.path.join(save_dir, f'RADAR_infer_results_{save_tag}.csv')
     os.makedirs(save_dir, exist_ok=True)
