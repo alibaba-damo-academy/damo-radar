@@ -12,6 +12,7 @@ This document covers training RADAR/RADAR+ on Merlin-CT-Train set from scratch o
 - [Training](#2-training)
 - [Inference](#3-inference)
 - [Evaluation](#4-evaluation)
+- [Others](#others)
 
 ---
 
@@ -135,3 +136,19 @@ python calc_metrics.py
 ---
 
 [← Back to README](../README.md)
+
+
+## Others
+
+We also provide utility scripts for image/mask and radiology report preprocessing.
+
+### Image and Mask Preprocessing
+For image preprocessing, we use [TotalSegmentator V1](https://github.com/wasserth/TotalSegmentator/tree/v1.5.7) to generate segmentation masks for 104 anatomical structures. The script `process_img_mask.py` then maps these masks to 36 major anatomical structures and resamples both the images and masks to a spacing of `[1, 1, 5]`.
+
+### Report Preprocessing
+For radiology report processing, we provide the following scripts:
+
+- `check_organ_mention.py`: identifies whether a report mentions a specific abdominal anatomical structure.
+- `report_parsing.py`: extracts anatomy-level descriptions for the anatomical structures mentioned in the report.
+- `report_parsing_normal.py`: determines whether each mentioned anatomical structure is described as **normal** or **abnormal**. This information is used to reduce false negatives during training.
+
