@@ -60,7 +60,7 @@ for i, test_item in enumerate(test_items):
 
     # compute auc
     diease_auc = roc_auc_score(gt_labels, pd_scores)
-    print(test_item, diease_auc)
+    print(test_item, np.round(diease_auc, 4))
     all_aucs.append(diease_auc)
     all_aucs_anatomy.append(diease_auc)
 
@@ -97,12 +97,12 @@ for i, test_item in enumerate(test_items):
     
     # compute auc
     diease_auc = roc_auc_score(gt_labels, pd_scores)
-    print(test_item, diease_auc)
+    print(test_item, np.round(diease_auc, 4))
     all_aucs.append(diease_auc)
     all_aucs_whole.append(diease_auc)
     
-print(f'\nAvgAUC_anatomy: {np.mean(all_aucs_anatomy):.4f}')
-print(f'\nAvgAUC_whole: {np.mean(all_aucs_whole):.4f}')
-print(f'\nAvgAUC: {np.mean(all_aucs):.4f}')
+print(f'AvgAUC_anatomy: {np.mean(all_aucs_anatomy):.4f}')
+print(f'AvgAUC_whole: {np.mean(all_aucs_whole):.4f}')
+print(f'AvgAUC: {np.mean(all_aucs):.4f}')
 
 print('done')

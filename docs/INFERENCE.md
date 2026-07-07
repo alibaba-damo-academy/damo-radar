@@ -65,6 +65,32 @@ Compute performance metrics using the inference CSV and the label file:
 python calc_metrics_merlin_testset.py
 ```
 
+The script reports the AUC for each finding, as well as the average AUC across all findings:
+```bash
+abdominal_aortic_aneurysm 0.9903
+atherosclerosis 0.8739
+submucosal_edema 0.8879
+appendicitis 0.7621
+bowel_obstruction 0.9704
+aortic_valve_calcification 0.8436
+cardiomegaly 0.8724
+biliary_ductal_dilation 0.8711
+hepatomegaly 0.8988
+hepatic_steatosis 0.8917
+pleural_effusion 0.9574
+atelectasis 0.7091
+renal_hypodensities 0.9122
+renal_cyst 0.9426
+hydronephrosis 0.88
+gallstones 0.9193
+pancreatic_atrophy 0.9356
+splenomegaly 0.9682
+fracture 0.6834
+hiatal_hernia 0.8601
+surgically_absent_gallbladder 0.9234
+AvgAUC: 0.8835
+```
+
 ---
 
 [← Back to README](../README.md)

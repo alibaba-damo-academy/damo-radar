@@ -49,7 +49,7 @@ for i, test_item in enumerate(test_items):
     
     # compute auc
     diease_auc = roc_auc_score(gt_labels, pd_scores)
-    print(test_item, map_radar_merlin[test_item], diease_auc)
+    print(map_radar_merlin[test_item], np.round(diease_auc, 4))
     all_aucs.append(diease_auc)
     
 print(f'AvgAUC: {np.mean(all_aucs):.4f}')
