@@ -17,8 +17,8 @@ This document covers 1. an inference demo with RADAR pre-trained checkpoint on R
 
 ### (1) Download Required Files and Place Them to Target folder
 
-| File                  | Description                            | Destination                                  |
-| --------------------- | -------------------------------------- | -------------------------------------------- |
+| File                  | Description                            | Destination                            |
+| --------------------- | -------------------------------------- | -------------------------------------- |
 | Pretrained checkpoint | RADAR pre-trained checkpoint on RAD-CT | `ckpt/checkpoint_radar_pretrain.pth` |
 | `bert-base-chinese` | BERT tokenizer and model               | `ckpt/bert-base-chinese`             |
 
@@ -66,6 +66,7 @@ python calc_metrics_merlin_testset.py
 ```
 
 The script reports the AUC for each finding, as well as the average AUC across all findings:
+
 ```bash
 abdominal_aortic_aneurysm 0.9903
 atherosclerosis 0.8739
@@ -90,6 +91,12 @@ hiatal_hernia 0.8601
 surgically_absent_gallbladder 0.9234
 AvgAUC: 0.8835
 ```
+
+The table below summarizes the evaluation performance.
+
+| model | Description       | AUC           | ckpt path                              |
+| ----- | ----------------- | ------------- | -------------------------------------- |
+| RADAR | Trained on RAD-CT | 0.883         | `ckpt/checkpoint_radar_pretrain.pth`   |
 
 ---
 

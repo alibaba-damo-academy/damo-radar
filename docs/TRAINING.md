@@ -122,7 +122,7 @@ cd RADAR_train
 torchrun --nproc_per_node=8 infer_merlin_whole.py
 ```
 
-The inference results will be saved as CSV files. We provided two example result files: `checkpoint_ZeroShotResult_anatomy.csv` and `checkpoint_ZeroShotResult_whole.csv`.
+The inference results will be saved as CSV files.
 
 ---
 
@@ -135,42 +135,14 @@ cd RADAR_train
 python calc_metrics.py
 ```
 
-The script reports the AUC of RADAR+ trained from scratch for each finding, as well as the average AUC across all findings:
-```bash
-large bowel_submucosal-edema 0.8787
-kidney_renal-hypodensities 0.8118
-heart_aortic-valve-calcification 0.9789
-pancreas_pancreatic-atrophy 0.9136
-kidney_renal-cyst 0.8459
-lung_atelectasis 0.884
-aorta_aortic-aneurysm 0.9903
-esophagus_hiatal-hernia 0.8813
-liver_biliary-ductal-dilation 0.8749
-heart_cardiomegaly 0.9295
-spleen_splenomegaly 0.9795
-liver_hepatomegaly 0.8731
-aorta_atherosclerosis 0.8858
-lung_pleural-effusion 0.9712
-liver_hepatic-steatosis 0.8998
-large bowel_appendicitis 0.5438
-gallbladder_gallstones 0.8759
-kidney_hydronephrosis 0.9299
-small bowel_bowel-obstruction 0.9761
-lumbar vertebrae_fracture 0.7939
-surgically_absent_gallbladder 0.9273
-coronary_calcification 0.8235
-thrombosis 0.5491
-metastatic_disease 0.6508
-osteopenia 0.8921
-anasarca 0.8723
-lymphadenopathy 0.5357
-prostatomegaly 0.5986
-ascites 0.8404
-free_air 0.7387
-AvgAUC_anatomy: 0.8879
-AvgAUC_whole: 0.7224
-AvgAUC: 0.8382
-```
+The table below summarizes the evaluation performance of RADAR+ under different training settings.
+
+| model          | Description                              | AUC (anatomy) | AUC (whole) | ckpt path                                           |
+| -------------- | ---------------------------------------- | ------------- | ----------- | ----------------------------------------------------|
+| RADAR+         | Trained from scratch on Merlin-CT-Train  | 0.888         | /           |`ckpt/checkpoint_radar_plus.pth`                     |
+| RADAR+         | Fine-tuned on Merlin-CT-Train            | 0.918         | 0.876       |`ckpt/checkpoint_radar_plus_finetuned_on_merlin.pth` |
+
+
 
 ---
 
