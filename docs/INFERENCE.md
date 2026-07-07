@@ -65,7 +65,7 @@ Compute performance metrics using the inference CSV and the label file:
 python calc_metrics_merlin_testset.py
 ```
 
-The script reports the AUC for each finding, as well as the average AUC across all findings:
+The script reports the performance of the RADAR model evaluated directly on the external MERLIN test set.
 
 ```bash
 abdominal_aortic_aneurysm 0.9903
@@ -96,7 +96,7 @@ The table below summarizes the evaluation performance.
 
 | model | Description       | AUC           | ckpt path                              |
 | ----- | ----------------- | ------------- | -------------------------------------- |
-| RADAR | Trained on RAD-CT | 0.883         | `ckpt/checkpoint_radar_pretrain.pth`   |
+| RADAR | Trained on RAD-CT, inference on external merlin test set | 0.883         | `ckpt/checkpoint_radar_pretrain.pth`   |
 
 ---
 
