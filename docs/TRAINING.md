@@ -135,7 +135,7 @@ cd RADAR_train
 python calc_metrics.py
 ```
 
-The script reports the AUC for each finding, as well as the average AUC across all findings:
+The script reports the AUC of RADAR+ trained from scratch for each finding, as well as the average AUC across all findings:
 ```bash
 large bowel_submucosal-edema 0.8787
 kidney_renal-hypodensities 0.8118
