@@ -20,8 +20,10 @@ This document covers training RADAR/RADAR+ on Merlin-CT-Train set from scratch o
 
 ### Download Our Processed MERLIN Training Data
 
-- Download the our processed MERLIN training data from HuggingFace, or
-- **Quick start:** Using `data/merlin_data_train_demo/` in this repo to verify the training pipeline before downloading the full training data.
+- **Quick start:** This repository already provides several demo cases in `data/merlin_data_train_demo/`. These demo cases are intended only for verifying that the training pipeline can run successfully, so downloading the full dataset is **not required** at this stage.
+- **Or train the model on the full dataset:** Please download our processed MERLIN training data from Hugging Face. 
+    - Due to upload size limitations, the full training data are provided in three parts under `merlin_data_train_full/resized_images and resized_masks`: `part00`, `part01`, and `part02`. Before training, merge the contents of these three parts into a single folder.
+    - After preparing the full dataset, update the `vis_root` path at line 79 in `RADAR_train/lavis/datasets/datasets/caption_datasets.py` so that it points to the merged training data folder.
 
 ### Download Support Files and Place Them to Target Folder
 
