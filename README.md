@@ -5,7 +5,7 @@
 [![Zenodo](https://img.shields.io/badge/Zenodo-Model&Data-7B61FF?logo=zenodo&logoColor=white)](https://zenodo.org/records/20437705)
 
 
-Artificial intelligence (AI) in radiology aspires to deliver expert-level diagnosis across diverse clinical tasks, yet existing supervised strategies remain limited in scope. We developed **RADAR**, a generalist vision–language model trained on more than **400,000** contrast-enhanced abdominal CT examinations and **15 million** anatomy-wise image–text pairs, learning directly from clinical reports without manual annotation. Across extensive internal and external evaluations spanning multiple centers and varied scenarios, RADAR achieved high diagnostic performance and robust generalization for **18 anatomical structures** and **146 imaging findings**. In a reader study, AI assistance increased the diagnostic sensitivity of 26 radiologists by approximately 10%, underscoring its clinical utility. In summary, RADAR offers a scalable, versatile, and interpretable solution, demonstrating that generalist AI can match human experts in both routine and complex radiology tasks.
+RADAR is a generalist vision-language model trained on over 400,000 contrast-enhanced abdominal CT examinations with 15 million anatomy-aware image–text pairs, learning directly from clinical reports without manual annotation. RADAR provides a scalable and versatile framework for radiology AI, demonstrating expert-level performance across both routine and complex clinical tasks.
 
 <p align="center">
   <img src="docs/radar_fig0.png" alt="RADAR Overview" width="90%">
