@@ -1,7 +1,7 @@
 # RADAR: An Expert-Level Generalist AI for Abdominal CT Diagnosis
 
 [![GitHub](https://img.shields.io/badge/GitHub-Code-blue?logo=github&logoColor=white)](https://github.com/alibaba-damo-academy/damo-radar)
-[![Zenodo](https://img.shields.io/badge/Zenodo-Code-7B61FF?logo=zenodo&logoColor=white)](https://zenodo.org/records/20437705)
+[![Zenodo](https://img.shields.io/badge/Zenodo-Code-7B61FF?logo=zenodo&logoColor=white)](https://zenodo.org/records/21271172)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model&Data-FFBF00)](https://huggingface.co/radar-generalist)
 
 
@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 ---
 ## Zenodo
-Code can also be archived on [Zenodo](https://zenodo.org/records/20437705).
+Code can also be archived on [Zenodo](https://zenodo.org/records/21271172).
 
 ---
 
