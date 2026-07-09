@@ -1,6 +1,6 @@
 # RADAR: An Expert-Level Generalist AI for Abdominal CT Diagnosis
 
-[![GitHub](https://img.shields.io/badge/GitHub-Code-blue)](https://github.com/alibaba-damo-academy/damo-radar)
+[![GitHub](https://img.shields.io/badge/GitHub-Code-blue?logo=github&logoColor=white)](https://github.com/alibaba-damo-academy/damo-radar)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model&Data-FFBF00)](https://huggingface.co/radar-generalist)
 [![Zenodo](https://img.shields.io/badge/Zenodo-Model&Data-7B61FF?logo=zenodo&logoColor=white)](https://zenodo.org/records/20437705)
 
