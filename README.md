@@ -1,8 +1,8 @@
 # RADAR: An Expert-Level Generalist AI for Abdominal CT Diagnosis
 
 [![GitHub](https://img.shields.io/badge/GitHub-Code-blue?logo=github&logoColor=white)](https://github.com/alibaba-damo-academy/damo-radar)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model&Data-FFBF00)](https://huggingface.co/radar-generalist)
 [![Zenodo](https://img.shields.io/badge/Zenodo-Code-7B61FF?logo=zenodo&logoColor=white)](https://zenodo.org/records/20437705)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model&Data-FFBF00)](https://huggingface.co/radar-generalist)
 
 
 RADAR is a generalist vision-language model trained on over 400,000 contrast-enhanced abdominal CT examinations with 15 million anatomy-aware image–text pairs, learning directly from clinical reports without manual annotation. RADAR provides a scalable and versatile framework for radiology AI, demonstrating expert-level performance across both routine and complex clinical tasks.
