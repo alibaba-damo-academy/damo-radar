@@ -30,7 +30,15 @@ pip install -r requirements.txt
 
 - The pre-trained checkpoints and supporting files are available on [HuggingFace](https://huggingface.co/radar-generalist).
 - For convenience, we have provided the demo nifty, and predicted results in CSV format in this repo. The supporting files required for the inference demo and training can be downloaded from HuggingFace.
+- Download via scripts: We provide two helper scripts under `download_scripts/` to fetch the required files from HuggingFace:
 
+```bash
+cd download_scripts
+# Download model checkpoints and support files into ckpt/
+python download_checkpoints.py
+# Download auxiliary data (processed masks)
+python download_auxiliary_data.py
+```
 ---
 
 ## Zenodo
@@ -43,11 +51,11 @@ Code can also be archived on [Zenodo](https://zenodo.org/records/21271172).
 
 For detailed instructions, please refer to the following guides:
 
-| Guide                         | Description                                                                                                                                               |
-| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Training](docs/TRAINING.md)   | Train RADAR/RADAR+ from scratch or fine-tune on MERLIN data; inference and evaluation are also included.                                                  |
-| [Inference](docs/INFERENCE.md) | 1. An inference demo with a radar pre-trained checkpoint on RAD-CT, and 2. Inference and evaluation of radar performance on the external MERLIN test set. |
-| [Preprocess](docs/PREPROCESS.md) | Image/mask and radiology report preprocessing code, which can be used to process the MERLIN data or your own custom data. |
+| Guide                           | Description                                                                                                                                               |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Training](docs/TRAINING.md)     | Train RADAR/RADAR+ from scratch or fine-tune on MERLIN data; inference and evaluation are also included.                                                  |
+| [Inference](docs/INFERENCE.md)   | 1. An inference demo with a radar pre-trained checkpoint on RAD-CT, and 2. Inference and evaluation of radar performance on the external MERLIN test set. |
+| [Preprocess](docs/PREPROCESS.md) | Image/mask and radiology report preprocessing code, which can be used to process the MERLIN data or your own custom data.                                 |
 
 ---
 

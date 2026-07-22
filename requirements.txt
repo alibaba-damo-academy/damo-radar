@@ -34,3 +34,4 @@ SimpleITK
 nibabel
 matplotlib
 nltk
+huggingface_hub
