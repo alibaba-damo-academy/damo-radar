@@ -22,7 +22,7 @@ conda activate radar
 pip install -r requirements.txt
 ```
 
-> **Note:** The pinned package versions (e.g. `transformers==4.25`) follow the [LAVIS](https://github.com/salesforce/LAVIS). Other versions may also work.
+<!-- > **Note:** The pinned package versions (e.g. `transformers==4.25`) follow the [LAVIS](https://github.com/salesforce/LAVIS). Other versions may also work. -->
 
 ---
 
