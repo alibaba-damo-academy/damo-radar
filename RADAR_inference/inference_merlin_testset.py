@@ -622,7 +622,7 @@ def inference(initialize_returns, img_dir, save_dir, save_tag):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--img_dir', type=str, default='/mnt/nas/xiuxia/data/VLP/Merlin/download/merlinabdominalctdataset/merlin_data', help='The path to inference image folder.')
+    parser.add_argument('--img_dir', type=str, default=None, required=True, help='The path to inference image folder.')
     parser.add_argument('--save_dir', type=str, default='../results', help='The path to save folder.')
     parser.add_argument('--save_tag', type=str, default='MerlinTestset', help='Save tag.')
     
