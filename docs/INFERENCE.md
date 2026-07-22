@@ -30,6 +30,8 @@ All files are available on HuggingFace.
 
 ### (2) Run Inference
 
+> **Note:** Inference can be run on a single GPU or multiple GPUs (A100 or H20). A single GPU is sufficient for this demo.
+
 ```bash
 cd RADAR_inference
 python inference_demo.py

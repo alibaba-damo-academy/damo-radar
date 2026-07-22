@@ -8,3 +8,6 @@ __pycache__
 training_results
 bert-base-chinese
 bert-base-uncased
+merlin_labels.json
+merlin_report.json
+.vscode

@@ -67,7 +67,7 @@ cd RADAR_train
 torchrun --nproc_per_node=8 train.py
 ```
 
-> **Note:** We trained the model using 24 GPUs with a total batch size of 48.
+> **Note:** We trained the model using 24 GPUs (A100 or H20) with a total batch size of 48.
 
 ### Configure RADAR+ Global Alignment
 
@@ -83,6 +83,8 @@ Set `radar_ft` to `True` in `radar_config.yaml` to enable fine-tuning from the p
 ---
 
 ## 3. Inference
+
+> **Note:** Inference can be run on a single GPU or multiple GPUs (A100 or H20). Multi-GPU is recommended to speed up large-scale inference.
 
 - We use the official prompts released by MERLIN during inference.
 - Before running inference, ensure that the [original MERLIN data](https://stanfordaimi.azurewebsites.net/datasets/60b9c7ff-877b-48ce-96c3-0194c8205c40) has been downloaded, and update the data path:
@@ -139,13 +141,13 @@ python calc_metrics.py
 
 The table below summarizes the evaluation performance of RADAR+ under different training settings.
 
-| model  | Description                             | AUC (anatomy) | AUC (whole) | ckpt path                                              |
+| model  | Description                             | AUC (anatomy) | AUC (all) | ckpt path                                              |
 | ------ | --------------------------------------- | ------------- | ----------- | ------------------------------------------------------ |
 | RADAR+ | Trained from scratch on Merlin-CT-Train | 0.888         | /           | `ckpt/checkpoint_radar_plus.pth`                     |
 | RADAR+ | Fine-tuned on Merlin-CT-Train           | 0.918         | 0.876       | `ckpt/checkpoint_radar_plus_finetuned_on_merlin.pth` |
 
 ---
-
+<!-- 
 ## Others
 
 We also provide utility scripts for image/mask and radiology report preprocessing.
@@ -162,6 +164,6 @@ For radiology report processing, we provide the following scripts:
 - `report_parsing.py`: extracts anatomy-level descriptions for the anatomical structures mentioned in the report.
 - `report_parsing_normal.py`: determines whether each mentioned anatomical structure is described as **normal** or **abnormal**. This information is used to reduce false negatives during training.
 
----
+--- -->
 
 [← Back to README](../README.md)
