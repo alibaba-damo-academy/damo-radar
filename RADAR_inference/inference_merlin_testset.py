@@ -617,8 +617,6 @@ def inference(initialize_returns, img_dir, save_dir, save_tag):
     csv_file = os.path.join(save_dir, f'RADAR_infer_results_{save_tag}.csv')
     print(f'evaluate done, save result_csv to {csv_file}.')
     
-    # TODO: compute metrics
-    
 
 def parse_args():
     parser = argparse.ArgumentParser()
