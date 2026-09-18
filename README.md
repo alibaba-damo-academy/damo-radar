@@ -1,8 +1,10 @@
 # RADAR: An Expert-Level Generalist AI for Abdominal CT Diagnosis
 
-[![GitHub](https://img.shields.io/badge/GitHub-Code-blue?logo=github&logoColor=white)](https://github.com/alibaba-damo-academy/damo-radar)
-[![Zenodo](https://img.shields.io/badge/Zenodo-Code-7B61FF?logo=zenodo&logoColor=white)](https://zenodo.org/records/21271172)
-[![Hugging Face](<https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model&Data-FFBF00>)](https://huggingface.co/radar-generalist)
+[![Paper](https://img.shields.io/badge/Science-Paper-2B6CB0?logo=google-scholar&logoColor=white)](https://www.science.org/doi/10.1126/science.aec6129)
+[![GitHub](https://img.shields.io/badge/GitHub-Code-B85C38?logo=github&logoColor=white)](https://github.com/alibaba-damo-academy/damo-radar)
+[![Zenodo](https://img.shields.io/badge/Zenodo-Code-0F766E?logo=zenodo&logoColor=white)](https://zenodo.org/records/21271172)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Models%26Data-71813F?logo=huggingface&logoColor=white)](https://huggingface.co/radar-generalist)
+[![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-7C3F58?logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 RADAR is a generalist vision-language model trained on over 400,000 contrast-enhanced abdominal CT examinations with 15 million anatomy-aware image–text pairs, learning directly from clinical reports without manual annotation. RADAR provides a scalable and versatile framework for radiology AI, demonstrating expert-level performance across both routine and complex clinical tasks.
 
@@ -83,9 +85,15 @@ Portions of the code are derived from third-party open-source projects that are 
 If you find RADAR useful in your research, please cite our paper:
 
 ```bibtex
-@article{radar,
-  title   = {RADAR: An Expert-Level Generalist AI for Abdominal CT Diagnosis},
-  year    = {2026},
-  note    = {BibTeX entry to be updated upon publication}
+@article{damo-radar-2026,
+    author = {Qi Zhang and Jianpeng Zhang and Weiwei Cao and Zilin Lu and Wanxing Chang and Haonan Ding and Cao Chen and Zhi Li and Xing Xue and Sinuo Wang and Shaoteng Zhang and Yutong Xie and Yong Xia and Qi Wu and Zhongyi Shui and Xi Li and Zhilin Zheng and Yanjie Zhou and Tony C.W. Mok and Yingda Xia and Hongkan Wang and Xianghua Ye and Tao Ma and Jie Peng and Xiaoguang Wang and Jian Ding and Yuming Gao and Huazhen Ye and Yiping Liu and Dongjie Chen and Zhaomin Ni and Jianwen Ning and Wei Zhang and Jian Liu and Chaohui Yu and Shenghong Ju and Jianfeng Zhang and Wenbo Xiao and Ling Zhang and Tingbo Liang },
+    title = {An expert-level generalist AI for abdominal CT diagnosis},
+    journal = {Science},
+    volume = {393},
+    number = {6817},
+    pages = {eaec6129},
+    year = {2026},
+    doi = {10.1126/science.aec6129},
+    URL = {https://www.science.org/doi/abs/10.1126/science.aec6129}
 }
 ```
