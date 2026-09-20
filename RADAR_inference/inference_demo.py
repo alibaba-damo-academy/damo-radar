@@ -23,6 +23,30 @@ from dynamic_network_architectures.vision_branch import VisionBranch
 from transformers import BertTokenizer
 
 
+def _resolve_device():
+    """Pick the best available device: MPS (Apple Silicon) > CUDA > CPU.
+
+    Set the RADAR_DEVICE environment variable (e.g. RADAR_DEVICE=cpu) to override.
+    """
+    forced = os.environ.get("RADAR_DEVICE", "").strip().lower()
+    if forced:
+        return torch.device(forced)
+    if hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+        return torch.device("mps")
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    return torch.device("cpu")
+
+
+DEVICE = _resolve_device()
+
+
+def _empty_cache():
+    """Only CUDA has a cache to clear; this is a no-op on MPS and CPU."""
+    if DEVICE.type == "cuda":
+        torch.cuda.empty_cache()
+
+
 model_root = os.environ.get("MODEL_ROOT", "../ckpt")
 configs_root = os.environ.get("CONFIGS_ROOT", "../ckpt")
 
@@ -411,13 +435,19 @@ def evaluate(pad_func, model, img_dir, save_dir, save_tag):
     organ_status = {}
 
     # load pos/neg ensembled prompt embeddings
-    text_feat_dict = torch.load('../ckpt/infer_text_embedding_radar.pt')
+    # This checkpoint has CUDA tensors baked in, so it cannot be deserialized
+    # on a machine without CUDA. Load it on CPU, then move the tensors to the
+    # target device -- they must live on the same device as `image_feat`,
+    # otherwise the matmul below fails with a device mismatch.
+    text_feat_dict = torch.load('../ckpt/infer_text_embedding_radar.pt', map_location='cpu')
+    text_feat_dict = {k: (v.to(DEVICE) if torch.is_tensor(v) else v)
+                      for k, v in text_feat_dict.items()}
     organ_feat_dict = {}
     save_path = os.path.join(save_dir, f'RADAR_infer_results_{save_tag}.csv')
     os.makedirs(save_dir, exist_ok=True)
     
     for i, (image, test_items, meta_info) in enumerate(tqdm(dataloader, desc='Infer')):
-        torch.cuda.empty_cache()
+        _empty_cache()
         skip_case = False
         for tmp_s in image.shape[1:]:
             if tmp_s > 1000:
@@ -429,7 +459,7 @@ def evaluate(pad_func, model, img_dir, save_dir, save_tag):
         fid = meta_info['file_name']
         organ_feat_dict[fid] = {}
 
-        image = image[None].cuda()
+        image = image[None].to(DEVICE)
 
         test_organs = meta_info['test_organ_names']
 
@@ -445,8 +475,8 @@ def evaluate(pad_func, model, img_dir, save_dir, save_tag):
         # organ_logits.pop('胆囊_术后胆囊缺失')  # surgically_absent_gallbladder
 
         # get full mask
-        full_mask = torch.zeros((1, 37) + tuple(image_size)).cuda()
-        count_map = torch.zeros_like(full_mask).cuda()
+        full_mask = torch.zeros((1, 37) + tuple(image_size), device=DEVICE)
+        count_map = torch.zeros_like(full_mask, device=DEVICE)
 
         for slice_g in range(0, num_win, sw_batch_size):
             slice_range = range(slice_g, min(slice_g + sw_batch_size, num_win))
@@ -455,7 +485,7 @@ def evaluate(pad_func, model, img_dir, save_dir, save_tag):
                 for idx in slice_range
             ]
             
-            window_patches = torch.cat([image[win_slice] for win_slice in unravel_slice]).cuda()
+            window_patches = torch.cat([image[win_slice] for win_slice in unravel_slice]).to(DEVICE)
 
             organ_logits, pred_window_seg_prob = model.forward_test_win(
                 window_patches, 
@@ -582,7 +612,7 @@ def initialize():
     msg = model.load_state_dict(ckpt['model'], strict=False)
 
     model.eval()
-    model.cuda()
+    model.to(DEVICE)
 
     print('\n--> Initialize done')
 
