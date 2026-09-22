@@ -74,12 +74,15 @@ This project is built upon the following open-source projects:
 
 ## License
 
-This project is released under the [Apache License 2.0](LICENSE).
+This project is released under the [CC BY-NC-SA 4.0](LICENSE).
 
 Portions of the code are derived from third-party open-source projects that are distributed under their own licenses (see the [Acknowledgements](#acknowledgements) above). Their original license texts are retained in [`THIRD_PARTY_LICENSES.md`](THIRD_PARTY_LICENSES.md).
 
 ---
 
+> The model may produce errors and is not intended for clinical diagnosis or treatment decisions.
+
+---
 ## Citation
 
 If you find RADAR useful in your research, please cite our paper:
