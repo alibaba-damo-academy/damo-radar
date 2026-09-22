@@ -29,7 +29,7 @@ pip install -r requirements.txt
 
 ---
 
-## HuggingFace
+## Model & Data
 
 - The pre-trained checkpoints and supporting files are available on [HuggingFace](https://huggingface.co/radar-generalist) and [ModelScope](https://modelscope.cn/collections/DAMO_Academy/RADAR).
 - For convenience, we have provided the demo nifty, and predicted results in CSV format in this repo. The supporting files required for the inference demo and training can be downloaded from HuggingFace.
