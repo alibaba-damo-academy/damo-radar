@@ -33,7 +33,6 @@ def main():
         repo_type="model",
         local_dir=args.local_dir,
         allow_patterns=args.include_patterns,
-        local_dir_use_symlinks=False
     )
 
     print(f"Checkpoint download completed. Files are saved to: {args.local_dir}")

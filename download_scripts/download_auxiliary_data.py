@@ -19,7 +19,8 @@ def main():
         nargs="*",
         default=None,
         help=(
-            "All files in the repository will be downloaded."
+            "Optional file patterns to download, e.g. '*.nii.gz'. "
+            "If not specified, all files in the repository will be downloaded."
         )
     )
     args = parser.parse_args()
@@ -31,7 +32,6 @@ def main():
         repo_type="dataset",
         local_dir=args.local_dir,
         allow_patterns=args.include_patterns,
-        local_dir_use_symlinks=False
     )
 
     print(f"Auxiliary data download completed. Files are saved to: {args.local_dir}")
