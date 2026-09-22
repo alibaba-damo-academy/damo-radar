@@ -80,7 +80,7 @@ Portions of the code are derived from third-party open-source projects that are 
 
 ---
 
-> The model may produce errors and is not intended for clinical diagnosis or treatment decisions.
+> The Radar model is currently intended for research purposes only. Further improvements and prospective clinical studies are still required before it can be used directly for clinical deployment.
 
 ---
 ## Citation
