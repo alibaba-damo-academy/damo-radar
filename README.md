@@ -4,6 +4,7 @@
 [![GitHub](https://img.shields.io/badge/GitHub-Code-B85C38?logo=github&logoColor=white)](https://github.com/alibaba-damo-academy/damo-radar)
 [![Zenodo](https://img.shields.io/badge/Zenodo-Code-0F766E?logo=zenodo&logoColor=white)](https://zenodo.org/records/21271172)
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Models%26Data-71813F?logo=huggingface&logoColor=white)](https://huggingface.co/radar-generalist)
+[![ModelScope](https://img.shields.io/badge/ModelScope-Models%20%26%20Data-52627A?logo=modelscope&logoColor=white)](https://modelscope.cn/collections/DAMO_Academy/RADAR)
 [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-7C3F58?logo=creativecommons&logoColor=white)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 RADAR is a generalist vision-language model trained on over 400,000 contrast-enhanced abdominal CT examinations with 15 million anatomy-aware image–text pairs, learning directly from clinical reports without manual annotation. RADAR provides a scalable and versatile framework for radiology AI, demonstrating expert-level performance across both routine and complex clinical tasks.
@@ -30,7 +31,7 @@ pip install -r requirements.txt
 
 ## HuggingFace
 
-- The pre-trained checkpoints and supporting files are available on [HuggingFace](https://huggingface.co/radar-generalist).
+- The pre-trained checkpoints and supporting files are available on [HuggingFace](https://huggingface.co/radar-generalist) and [ModelScope](https://modelscope.cn/collections/DAMO_Academy/RADAR).
 - For convenience, we have provided the demo nifty, and predicted results in CSV format in this repo. The supporting files required for the inference demo and training can be downloaded from HuggingFace.
 - Download via scripts: We provide two helper scripts under `download_scripts/` to fetch the required files from HuggingFace:
 
